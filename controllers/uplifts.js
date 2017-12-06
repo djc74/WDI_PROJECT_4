@@ -9,18 +9,6 @@ function upliftsIndex(req, res, next) {
     .catch(next);
 }
 
-function upliftsCreate(req, res, next) {
-
-  req.body.createdBy = req.currentUser;
-
-  if(req.file) req.body.image = req.file.filename;
-
-  Uplift
-    .create(req.body)
-    .then(uplift => res.status(201).json(uplift))
-    .catch(next);
-}
-
 function upliftsShow(req, res, next) {
   Uplift
     .findById(req.params.id)
@@ -33,38 +21,7 @@ function upliftsShow(req, res, next) {
     .catch(next);
 }
 
-function upliftsUpdate(req, res, next) {
-
-  if(req.file) req.body.image = req.file.filename;
-
-  Uplift
-    .findById(req.params.id)
-    .exec()
-    .then((uplift) => {
-      if(!uplift) return res.notFound();
-      uplift = Object.assign(uplift, req.body);
-      return uplift.save();
-    })
-    .then(uplift => res.json(uplift))
-    .catch(next);
-}
-
-function upliftsDelete(req, res, next) {
-  Uplift
-    .findById(req.params.id)
-    .exec()
-    .then((uplift) => {
-      if(!uplift) return res.notFound();
-      return uplift.remove();
-    })
-    .then(() => res.status(204).end())
-    .catch(next);
-}
-
 module.exports = {
   index: upliftsIndex,
-  create: upliftsCreate,
-  show: upliftsShow,
-  update: upliftsUpdate,
-  delete: upliftsDelete
+  show: upliftsShow
 };
