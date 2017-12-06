@@ -32,3 +32,10 @@ const upliftData = [{
   body: 'https://media2.giphy.com/media/QBNrfOFxHv10A/giphy.gif',
   category: 'gif'
 }];
+
+mongoose.connect(dbURI, { useMongoClient: true })
+  .then(db => db.dropDatabase())
+  .then(() => Uplift.create(upliftData))
+  .then(uplifts => console.log(`${uplifts.length} uplifts created!`))
+  .catch(err => console.log(err))
+  .finally(() => mongoose.connection.close());
