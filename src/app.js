@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-import UpliftsIndex from './components/UpliftsIndex';
+import UpliftsIndex from './components/uplifts/UpliftsIndex';
 
 
 class App extends React.Component {
