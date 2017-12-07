@@ -22,7 +22,7 @@ describe('Uplifts Controller Test', () => {
     });
 
 
-    it('uplift objects shouls have properties: body, category, id', done => {
+    it('uplift objects should have properties: body, category, id', done => {
       api
         .get('/api/uplifts')
         .set('Accept', 'application/json')
