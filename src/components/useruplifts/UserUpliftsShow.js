@@ -8,7 +8,7 @@ class UserUpliftsShow extends React.Component {
 
   componentDidMount() {
     Axios
-      .get(`/api/useruplifts/${this.props.match.params.id}`)
+      .get(`/api/uplifts/${this.props.match.params.id}`)
       .then(res => this.setState({ useruplifts: res.data }))
       .catch(err => console.log(err));
   }
@@ -17,8 +17,8 @@ class UserUpliftsShow extends React.Component {
     return (
       <div>
         <h1>User Uplift show</h1>
-        <img src={this.state.useruplift.body}/>
-        <h3>{this.state.useruplift.category}</h3>
+        <img src={this.state.useruplifts.body}/>
+        <h3>{this.state.useruplifts.category}</h3>
       </div>
     );
   }
