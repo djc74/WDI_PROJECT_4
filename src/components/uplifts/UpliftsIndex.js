@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
 class UpliftsIndex extends React.Component {
@@ -22,7 +22,9 @@ class UpliftsIndex extends React.Component {
         <h1>Uplift Index</h1>
         {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
-            <img src={uplift.body} />
+            <Link to={`/uplifts/${uplift.id}`}>
+              <img src={uplift.body} />
+            </Link>
           </div>
         )}
       </div>
