@@ -11,8 +11,8 @@ class UserUpliftsNew extends React.Component {
     }
   }
 
-  handleChange = ({ target: {body, value} }) => {
-    const useruplift = Object.assign({}, this.state.useruplift, {[body]: value});
+  handleChange = ({ target: {name, value} }) => {
+    const useruplift = Object.assign({}, this.state.useruplift, {[name]: value});
     this.setState({ useruplift });
   }
 

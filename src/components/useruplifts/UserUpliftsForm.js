@@ -11,23 +11,23 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, useruplift }) => {
       <form onSubmit={handleSubmit} className="col-md-6">
 
         <div className="form-group">
-          <label htmlFor="image">Picture or gif</label>
+          <label htmlFor="body">Picture or gif</label>
           <input
             type="text"
             className="form-control"
-            id="image"
-            name="image"
+            id="body"
+            name="body"
             value={useruplift.body}
             onChange={handleChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="height">Height</label>
+          <label htmlFor="category">Category</label>
           <input
             type="text"
             className="form-control"
-            id="height"
-            name="height"
+            id="category"
+            name="category"
             value={useruplift.category}
             onChange={handleChange}
           />

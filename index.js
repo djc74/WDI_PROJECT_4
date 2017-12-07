@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const { port, dbURI, env } = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler = require('./lib/errorHandler');
-const routes          = require('./config/routes');
+const routes = require('./config/routes');
 
 mongoose.connect(dbURI, { useMongoClient: true });
 
