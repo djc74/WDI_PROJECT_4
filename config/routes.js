@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const uplifts = require('../controllers/uplifts');
-const useruplifts = require('../controllers/users');
+const users = require('../controllers/users');
 const auth = require('../controllers/auth');
-const secureRoute = require('../lib/secureRoute');
+// const secureRoute = require('../lib/secureRoute');
 
 router.route('/uplifts')
   .get(uplifts.index);
@@ -11,13 +11,13 @@ router.route('/uplifts/:id')
   .get(uplifts.show);
 
 router.route('/useruplifts')
-  .get(useruplifts.index)
-  .post(secureRoute, uplifts.create);
+  .get(users.index)
+  .post(users.create);
 
 router.route('useruplifts/:id')
-  .get(useruplifts.show)
-  .put(useruplifts.update)
-  .delete(useruplifts.delete);
+  .get(users.show)
+  .put(users.update)
+  .delete(users.delete);
 
 router.route('/register')
   .post(auth.register);

@@ -62,9 +62,9 @@ function upliftsUserDelete(req, res, next) {
 }
 
 module.exports = {
-  userindex: upliftsUserIndex,
-  usercreate: upliftsUserCreate,
-  usershow: upliftsUserShow,
-  userupdate: upliftsUserUpdate,
-  userdelete: upliftsUserDelete
+  index: upliftsUserIndex,
+  create: upliftsUserCreate,
+  show: upliftsUserShow,
+  update: upliftsUserUpdate,
+  delete: upliftsUserDelete
 };
