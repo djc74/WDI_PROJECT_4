@@ -17,10 +17,10 @@ const upliftData = [{
   body: 'https://farm5.staticflickr.com/4562/24983676008_ea0fff0576.jpg',
   category: 'picture'
 }, {
-  body: 'https://flic.kr/p/E4CE51',
+  body: 'https://c1.staticflickr.com/5/4577/38849017202_d45211a002.jpg',
   category: 'picture'
 }, {
-  body: 'https://flic.kr/p/HeKujx',
+  body: 'https://c1.staticflickr.com/5/4516/37981977035_b0a9f8baa7.jpg',
   category: 'picture'
 }, {
   body: 'https://media1.giphy.com/media/26u4a7hLvuO4feCkg/giphy.gif',

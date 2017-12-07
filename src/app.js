@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
+import './scss/style.scss';
 
-import UpliftsIndex from './components/uplifts/UpliftsIndex';
+import Routes from './components/utilities/Routes';
 
 
 class App extends React.Component {
   render() {
     return (
-      <main>
-        <UpliftsIndex />
-      </main>
+      <Router>
+        <main>
+          <Routes />
+        </main>
+      </Router>
     );
   }
 }
