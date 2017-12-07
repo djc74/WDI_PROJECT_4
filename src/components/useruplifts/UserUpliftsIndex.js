@@ -20,11 +20,15 @@ class UserUpliftsIndex extends React.Component {
     return (
       <div>
         <h1>User Uplift Index</h1>
+        <button>
+          <Link to={'/useruplifts/new'}>Add Uplift</Link>
+        </button>
         {this.state.useruplifts.map(useruplift =>
           <div key={useruplift.id}>
             <Link to={`/useruplifts/${useruplift.id}`}>
               <img src={useruplift.body} />
             </Link>
+
           </div>
         )}
       </div>
