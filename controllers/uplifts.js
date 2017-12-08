@@ -33,8 +33,21 @@ function upliftsShow(req, res, next) {
     .catch(next);
 }
 
+function upliftsDelete(req, res, next) {
+  Uplift
+    .findById(req.params.id)
+    .exec()
+    .then((uplift) => {
+      if(!uplift) return res.notFound();
+      return uplift.remove();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 module.exports = {
   index: upliftsIndex,
   create: upliftsCreate,
-  show: upliftsShow
+  show: upliftsShow,
+  delete: upliftsDelete
 };

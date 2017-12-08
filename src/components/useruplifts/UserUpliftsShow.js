@@ -5,12 +5,12 @@ import BackButton from '../utilities/BackButton';
 
 class UserUpliftsShow extends React.Component {
   state = {
-    useruplifts: {}
+    uplifts: {}
   }
 
   deleteUplift = () => {
     Axios
-      .delete(`/api/useruplifts/${this.props.match.params.id}`)
+      .delete(`/api/uplifts/${this.props.match.params.id}`)
       .then(() => this.props.history.push('/useruplifts'))
       .catch(err => console.log(err));
   }
@@ -18,7 +18,7 @@ class UserUpliftsShow extends React.Component {
   componentDidMount() {
     Axios
       .get(`/api/uplifts/${this.props.match.params.id}`)
-      .then(res => this.setState({ useruplifts: res.data }))
+      .then(res => this.setState({ uplifts: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -27,8 +27,8 @@ class UserUpliftsShow extends React.Component {
       <div>
         <h1>User Uplift show</h1>
         <BackButton />
-        <img src={this.state.useruplifts.body}/>
-        <h3>{this.state.useruplifts.category}</h3>
+        <img src={this.state.uplifts.body}/>
+        <h3>{this.state.uplifts.category}</h3>
         <button onClick={this.deleteUplift}>Delete</button>
       </div>
     );

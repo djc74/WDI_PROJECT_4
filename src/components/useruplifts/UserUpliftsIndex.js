@@ -7,13 +7,13 @@ import HomeButton from '../utilities/HomeButton';
 
 class UserUpliftsIndex extends React.Component {
   state = {
-    useruplifts: []
+    uplifts: []
   }
 
   componentDidMount() {
     Axios
-      .get('api/useruplifts')
-      .then(res => this.setState({ useruplifts: res.data}))
+      .get('api/uplifts')
+      .then(res => this.setState({ uplifts: res.data}))
       .catch(err => console.log(err));
   }
 
@@ -26,10 +26,10 @@ class UserUpliftsIndex extends React.Component {
         <button>
           <Link to={'/useruplifts/new'}>Add Uplift</Link>
         </button>
-        {this.state.useruplifts.map(useruplift =>
-          <div key={useruplift.id}>
-            <Link to={`/useruplifts/${useruplift.id}`}>
-              <img src={useruplift.body} />
+        {this.state.uplifts.map(uplift =>
+          <div key={uplift.id}>
+            <Link to={`/uplifts/${uplift.id}`}>
+              <img src={uplift.body} />
             </Link>
 
           </div>
