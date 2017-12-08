@@ -28,7 +28,7 @@ class UserUpliftsIndex extends React.Component {
         </button>
         {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
-            <Link to={`/uplifts/${uplift.id}`}>
+            <Link to={`/useruplifts/${uplift.id}`}>
               <img src={uplift.body} />
             </Link>
 

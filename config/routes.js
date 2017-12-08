@@ -10,7 +10,7 @@ router.route('/uplifts')
 
 router.route('/uplifts/:id')
   .get(uplifts.show)
-  .put(uplifts.update)
+  // .put(uplifts.update)
   .delete(uplifts.delete);
 
 // router.route('/useruplifts')
