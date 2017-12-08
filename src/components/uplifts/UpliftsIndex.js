@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
 import Gifs from '../apis/Gifs';
+import Pictures from '../apis/Pictures';
 
 class UpliftsIndex extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class UpliftsIndex extends React.Component {
       <div>
         <h1>Uplift Index</h1>
         <Gifs />
+        <Pictures />
         {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
             <Link to={`/uplifts/${uplift.id}`}>
