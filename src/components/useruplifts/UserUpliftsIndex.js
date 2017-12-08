@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
+import HomeButton from '../utilities/HomeButton';
+
 class UserUpliftsIndex extends React.Component {
   state = {
     useruplifts: []
@@ -20,6 +22,7 @@ class UserUpliftsIndex extends React.Component {
     return (
       <div>
         <h1>User Uplift Index</h1>
+        <HomeButton />
         <button>
           <Link to={'/useruplifts/new'}>Add Uplift</Link>
         </button>
