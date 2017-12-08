@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
+import Gifs from '../apis/Gifs';
+
 class UpliftsIndex extends React.Component {
   state = {
     uplifts: []
@@ -20,6 +22,7 @@ class UpliftsIndex extends React.Component {
     return (
       <div>
         <h1>Uplift Index</h1>
+        <Gifs />
         {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
             <Link to={`/uplifts/${uplift.id}`}>
