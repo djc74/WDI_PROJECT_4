@@ -9,6 +9,18 @@ function upliftsIndex(req, res, next) {
     .catch(next);
 }
 
+function upliftsCreate(req, res, next) {
+
+  req.body.createdBy = req.currentUser;
+
+  if(req.file) req.body.image = req.file.filename;
+
+  Uplift
+    .create(req.body)
+    .then(uplift => res.status(201).json(uplift))
+    .catch(next);
+}
+
 function upliftsShow(req, res, next) {
   Uplift
     .findById(req.params.id)
@@ -23,5 +35,6 @@ function upliftsShow(req, res, next) {
 
 module.exports = {
   index: upliftsIndex,
+  create: upliftsCreate,
   show: upliftsShow
 };

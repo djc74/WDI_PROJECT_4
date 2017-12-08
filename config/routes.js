@@ -5,14 +5,14 @@ const auth = require('../controllers/auth');
 // const secureRoute = require('../lib/secureRoute');
 
 router.route('/uplifts')
-  .get(uplifts.index);
+  .get(uplifts.index)
+  .post(uplifts.create);
 
 router.route('/uplifts/:id')
   .get(uplifts.show);
 
 router.route('/useruplifts')
   .get(useruplifts.index)
-  .post(useruplifts.create);
 
 router.route('useruplifts/:id')
   .get(useruplifts.show)

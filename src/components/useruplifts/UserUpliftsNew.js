@@ -5,22 +5,22 @@ import UserUpliftsForm from './UserUpliftsForm';
 
 class UserUpliftsNew extends React.Component {
   state = {
-    useruplift: {
+    uplift: {
       body: '',
       category: ''
     }
   }
 
   handleChange = ({ target: {name, value} }) => {
-    const useruplift = Object.assign({}, this.state.useruplift, {[name]: value});
-    this.setState({ useruplift });
+    const uplift = Object.assign({}, this.state.uplift, {[name]: value});
+    this.setState({ uplift });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
     Axios
-      .post('/api/useruplifts', this.state.useruplift)
+      .post('/api/uplifts', this.state.uplift)
       .then(() => this.props.history.push('/useruplifts'))
       .catch(err => console.log(err.response.data.errors));
   }
@@ -32,7 +32,7 @@ class UserUpliftsNew extends React.Component {
         <UserUpliftsForm
           handleSubmit={ this.handleSubmit }
           handleChange={ this.handleChange }
-          useruplift={ this.state.useruplift }
+          uplift={ this.state.uplift }
         />
       </div>
     );

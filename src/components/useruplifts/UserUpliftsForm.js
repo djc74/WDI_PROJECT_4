@@ -2,7 +2,7 @@ import React from 'react';
 
 import BackButton from '../utilities/BackButton';
 
-const UserUpliftsForm = ({ handleSubmit, handleChange, useruplift }) => {
+const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
   return (
     <div className="row">
       <div className="page-banner col-md-12">
@@ -17,7 +17,7 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, useruplift }) => {
             className="form-control"
             id="body"
             name="body"
-            value={useruplift.body}
+            value={uplift.body}
             onChange={handleChange}
           />
         </div>
@@ -28,7 +28,7 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, useruplift }) => {
             className="form-control"
             id="category"
             name="category"
-            value={useruplift.category}
+            value={uplift.category}
             onChange={handleChange}
           />
         </div>
