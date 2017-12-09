@@ -16,8 +16,8 @@ class Pictures extends React.Component {
 
   componentDidMount() {
     Axios
-      .get('https://www.reddit.com/r/pics.json')
-      .then(res => console.log(res))
+      .get('https://www.reddit.com/r/EarthPorn/.json')
+      .then(res => this.setState({ picture: res.data.data.data[0]}))
       .catch(err => console.log(err));
   }
 
@@ -25,7 +25,7 @@ class Pictures extends React.Component {
     return (
       <div>
         <h1>Pictures</h1>
-    
+        { this.state.picture && <img src={this.state.picture.url} />}
       </div>
     );
   }
