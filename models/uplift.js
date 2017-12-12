@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const upliftSchema = mongoose.Schema({
-  body: {type: String, required: true},
-  category: {type: String, required: true},
+  body: {type: String},
+  category: {type: String},
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 

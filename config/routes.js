@@ -10,16 +10,7 @@ router.route('/uplifts')
 
 router.route('/uplifts/:id')
   .get(uplifts.show)
-  // .put(uplifts.update)
   .delete(uplifts.delete);
-
-// router.route('/useruplifts')
-//   .get(useruplifts.index)
-//
-// router.route('useruplifts/:id')
-//   .get(useruplifts.show)
-//   .put(useruplifts.update)
-//   .delete(useruplifts.delete);
 
 router.route('/register')
   .post(auth.register);
