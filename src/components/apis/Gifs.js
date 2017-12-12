@@ -1,19 +1,13 @@
-// Giphy
-//
-// Api Key:
-// AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA
-
 import React from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
 
 import SaveButton from '../utilities/SaveButton';
 
-var i = 0;
-function nextInArray() {
-  i++;
-  console.log('clicked', i);
-}
+// var i = 0;
+// function nextInArray() {
+//   i++;
+//   console.log('clicked', i);
+// }
 
 
 class Gifs extends React.Component {
@@ -21,8 +15,8 @@ class Gifs extends React.Component {
 
   componentDidMount() {
     Axios
-      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=1&rating=G')
-      .then(res => this.setState({ gif: res.data.data[i] }))
+      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=10&rating=G')
+      .then(res => this.setState({ gif: res.data.data[0] }))
       .catch(err => console.log(err));
   }
 
@@ -46,10 +40,10 @@ class Gifs extends React.Component {
       <div>
         <h1>Gifs</h1>
         { this.state.gif && <img src={this.state.gif.images.fixed_width.url} />}
-        <button onClick={nextInArray}>Next</button>
+        {/* <button onClick={nextInArray}>Next</button> */}
         <SaveButton
           handleSubmit={ this.handleSubmit }
-          handleChange={this.handleChange}
+          handleChange={ this.handleChange }
         />
       </div>
     );
