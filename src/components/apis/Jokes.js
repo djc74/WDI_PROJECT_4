@@ -19,7 +19,12 @@ class Jokes extends React.Component {
     return (
       <div>
         <h1>Jokes</h1>
-        { this.state.joke && <h3>{this.state.joke.data.title}</h3>}
+        { this.state.joke &&
+          <div>
+            <h3>{this.state.joke.data.title}</h3>
+            <h3>{this.state.joke.data.selftext}</h3>
+          </div>
+        }
       </div>
     );
   }

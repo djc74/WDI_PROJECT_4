@@ -5,7 +5,9 @@
 
 import React from 'react';
 import Axios from 'axios';
+// import { Link } from 'react-router-dom';
 
+import SaveButton from '../utilities/SaveButton';
 
 class Gifs extends React.Component {
   state = {}
@@ -22,6 +24,7 @@ class Gifs extends React.Component {
       <div>
         <h1>Gifs</h1>
         { this.state.gif && <img src={this.state.gif.images.fixed_width.url} />}
+        <SaveButton />
       </div>
     );
   }

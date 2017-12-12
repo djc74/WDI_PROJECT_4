@@ -1,6 +1,6 @@
 import React from 'react';
-import Axios from 'axios';
-import { Link } from 'react-router-dom';
+// import Axios from 'axios';
+// import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
 import Gifs from '../apis/Gifs';
@@ -8,16 +8,16 @@ import Pictures from '../apis/Pictures';
 import Jokes from '../apis/Jokes';
 
 class UpliftsIndex extends React.Component {
-  state = {
-    uplifts: []
-  }
-
-  componentDidMount() {
-    Axios
-      .get('api/uplifts')
-      .then(res => this.setState({ uplifts: res.data}))
-      .catch(err => console.log(err));
-  }
+  // state = {
+  //   uplifts: []
+  // }
+  //
+  // componentDidMount() {
+  //   Axios
+  //     .get('api/uplifts')
+  //     .then(res => this.setState({ uplifts: res.data}))
+  //     .catch(err => console.log(err));
+  // }
 
   render() {
     return (
@@ -26,13 +26,13 @@ class UpliftsIndex extends React.Component {
         <Gifs />
         <Pictures />
         <Jokes />
-        {this.state.uplifts.map(uplift =>
+        {/* {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
             <Link to={`/uplifts/${uplift.id}`}>
               <img src={uplift.body} />
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     );
   }
