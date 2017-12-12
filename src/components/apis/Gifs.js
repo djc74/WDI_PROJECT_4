@@ -3,21 +3,23 @@ import Axios from 'axios';
 
 import SaveButton from '../utilities/SaveButton';
 
-// var i = 0;
-// function nextInArray() {
-//   i++;
-//   console.log('clicked', i);
-// }
-
 
 class Gifs extends React.Component {
-  state = {}
+  state = {
+    gifs: [],
+    currentIndex: 0,
+    url: ''
+  }
 
   componentDidMount() {
     Axios
-      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=10&rating=G')
-      .then(res => this.setState({ gif: res.data.data[0] }))
+      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=25&rating=G')
+      .then(res => this.setState({ gifs: res.data.data }))
       .catch(err => console.log(err));
+  }
+
+  nextInArray = () => {
+    this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
   }
 
 
@@ -36,14 +38,18 @@ class Gifs extends React.Component {
   }
 
   render () {
+    const currentGif = this.state.gifs[this.state.currentIndex];
+
+
     return (
       <div>
         <h1>Gifs</h1>
-        { this.state.gif && <img src={this.state.gif.images.fixed_width.url} />}
-        {/* <button onClick={nextInArray}>Next</button> */}
+        { currentGif && <img src={currentGif.images.fixed_width.url} />}
+        <button onClick={this.nextInArray}>Next</button>
         <SaveButton
           handleSubmit={ this.handleSubmit }
           handleChange={ this.handleChange }
+          uplift={ this.uplift }
         />
       </div>
     );

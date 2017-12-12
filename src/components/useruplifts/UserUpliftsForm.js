@@ -4,14 +4,11 @@ import BackButton from '../utilities/BackButton';
 
 const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
   return (
-    <div className="row">
-      <div className="page-banner col-md-12">
-        <BackButton />
-      </div>
-      <form onSubmit={handleSubmit} className="col-md-6">
-
-        <div className="form-group">
-          <label htmlFor="body">Picture or gif</label>
+    <div>
+      <BackButton />
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="body">Link to picture or gif</label>
           <input
             type="text"
             className="form-control"
@@ -21,7 +18,7 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div>
           <label htmlFor="category">Category</label>
           <input
             type="text"
@@ -34,7 +31,7 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
         </div>
 
         <div>
-          <button className="save-button">Save</button>
+          <button>Save</button>
         </div>
       </form>
     </div>
