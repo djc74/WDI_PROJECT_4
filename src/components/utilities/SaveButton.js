@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SaveButton = ({handleSubmit, handleChange, uplift}) => {
+const SaveButton = ({handleSubmit, url}) => {
 
   return(
     <div>
-      <button onClick={handleSubmit, handleChange, uplift}>Save</button>
+      <button onClick={handleSubmit, url}>Save</button>
     </div>
   );
 };

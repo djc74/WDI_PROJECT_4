@@ -22,23 +22,21 @@ class Gifs extends React.Component {
     this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
   }
 
-
-  handleChange = ({ target: {name, value} }) => {
-    const uplift = Object.assign({}, this.state.uplift, {[name]: value});
-    this.setState({ uplift });
+  getUrl = () => {
+    this.setState({url: this.state.gifs.images.fixed_width.url});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
     Axios
-      .post('/api/uplifts', this.state.uplift)
+      .post('/api/uplifts', getUrl)
       .then(() => this.props.history.push('/useruplifts'))
       .catch(err => console.log(err.response.data.errors));
   }
 
   render () {
-    const currentGif = this.state.gifs[this.state.currentIndex];
+    const currentGif = this.state.gifs[this.state.currentGif];
 
 
     return (
@@ -48,8 +46,7 @@ class Gifs extends React.Component {
         <button onClick={this.nextInArray}>Next</button>
         <SaveButton
           handleSubmit={ this.handleSubmit }
-          handleChange={ this.handleChange }
-          uplift={ this.uplift }
+          url={ this.url }
         />
       </div>
     );
