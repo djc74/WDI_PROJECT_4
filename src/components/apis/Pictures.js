@@ -5,7 +5,7 @@ import Axios from 'axios';
 class Pictures extends React.Component {
   state = {
     pictures: [],
-    currentIndex: 0
+    currentIndex: 1
   }
 
   componentDidMount() {

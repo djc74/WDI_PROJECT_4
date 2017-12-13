@@ -31,7 +31,7 @@ class Gifs extends React.Component {
 
     Axios
       .post('/api/uplifts', this.state.body)
-      .then(() => this.props.history.push('/uplifts'))
+      .then(() => this.props.history.push('/useruplifts'))
       .catch(err => console.log(err.response.data.errors));
   }
 
