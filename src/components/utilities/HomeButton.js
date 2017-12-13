@@ -6,7 +6,7 @@ const HomeButton = () => {
     <div>
       <button>
         <Link to="/">
-          Take me to the homepage
+          Homepage
         </Link>
       </button>
     </div>

@@ -6,23 +6,34 @@ import Axios from 'axios';
 
 
 class Jokes extends React.Component {
-  state = {}
+  state = {
+    jokes: [],
+    currentIndex: 1
+  }
 
   componentDidMount() {
     Axios
       .get('https://www.reddit.com/r/Jokes/.json')
-      .then(res => this.setState({ joke: res.data.data.children[1] }))
+      .then(res => this.setState({ jokes: res.data.data.children }))
       .catch(err => console.log(err));
   }
 
+  nextInArray = () => {
+    this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
+  }
+
   render () {
+    const currentJoke = this.state.jokes[this.state.currentIndex];
+
+
     return (
       <div>
         <h1>Jokes</h1>
-        { this.state.joke &&
+        { currentJoke &&
           <div>
-            <h3>{this.state.joke.data.title}</h3>
-            <h3>{this.state.joke.data.selftext}</h3>
+            <h3>{currentJoke.data.title}</h3>
+            <h3>{currentJoke.data.selftext}</h3>
+            <button onClick={this.nextInArray}>Next</button>
           </div>
         }
       </div>

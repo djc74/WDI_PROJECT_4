@@ -8,7 +8,7 @@ class Gifs extends React.Component {
   state = {
     gifs: [],
     currentIndex: 0,
-    url: ''
+    body: ''
   }
 
   componentDidMount() {
@@ -23,30 +23,29 @@ class Gifs extends React.Component {
   }
 
   getUrl = () => {
-    this.setState({url: this.state.gifs.images.fixed_width.url});
+    this.setState({body: this.state.gifs[this.state.currentIndex].images.original.url});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
     Axios
-      .post('/api/uplifts', getUrl)
-      .then(() => this.props.history.push('/useruplifts'))
+      .post('/api/uplifts', this.state.body)
+      .then(() => this.props.history.push('/uplifts'))
       .catch(err => console.log(err.response.data.errors));
   }
 
   render () {
-    const currentGif = this.state.gifs[this.state.currentGif];
-
+    const currentGif = this.state.gifs[this.state.currentIndex];
 
     return (
       <div>
         <h1>Gifs</h1>
-        { currentGif && <img src={currentGif.images.fixed_width.url} />}
+        { currentGif && <img src={currentGif.images.original.url} />}
         <button onClick={this.nextInArray}>Next</button>
         <SaveButton
           handleSubmit={ this.handleSubmit }
-          url={ this.url }
+          getUrl = { this.getUrl }
         />
       </div>
     );
