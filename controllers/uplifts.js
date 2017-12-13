@@ -2,7 +2,7 @@ const Uplift = require('../models/uplift');
 
 function upliftsIndex(req, res, next) {
   Uplift
-    .find()
+    .find({ createdBy: req.currentUser.id })
     .populate('createdBy')
     .exec()
     .then(uplifts => res.json(uplifts))

@@ -30,6 +30,7 @@ class UserUpliftsIndex extends React.Component {
           <div key={uplift.id}>
             <Link to={`/useruplifts/${uplift.id}`}>
               <img src={uplift.body} />
+              <h4> {uplift.createdBy} </h4>
             </Link>
 
           </div>
