@@ -4,11 +4,12 @@ import Auth from '../../lib/Auth';
 
 const rightStyle = {
   float: 'right',
-  margin: '0 5px'
+  margin: '0 5px',
 };
 
 const tinyLogo = {
-  height: '50px'
+  height: '50px',
+  padding: '5px'
 }
 
 const Nav = ({ history }) => {

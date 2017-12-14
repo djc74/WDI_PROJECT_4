@@ -9,11 +9,9 @@ html {
 
 @keyframes colorchange
    {
-     0%   {background: red;}
-     20%  {background: orange;}
-     50%  {background: yellow;}
-     80%  {background: orange;}
-     100% {background: red;}
+     0%   {background: #fc4a1a;}
+     50%  {background: #f7b733;}
+     100%  {background: #fc4a1a;}
    }
 
 img {

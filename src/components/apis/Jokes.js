@@ -35,7 +35,7 @@ class Jokes extends React.Component {
       <div>
         { currentJoke &&
           <div>
-            <h3>{currentJoke.data.title}</h3>
+            <h3><strong>{currentJoke.data.title}</strong></h3>
             <h3>{currentJoke.data.selftext}</h3>
             <button onClick={this.nextInArray}>Next</button>
             <button onClick={() => this.handleClick(currentJoke)}>Save</button>

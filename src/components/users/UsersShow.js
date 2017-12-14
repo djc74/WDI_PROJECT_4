@@ -7,11 +7,11 @@ import BackButton from '../utilities/BackButton';
 
 const upliftStyle = {
   border: '2px solid black',
-  width: '90%',
+  width: '400px',
   height: '400px',
   overflow: 'hidden',
   display: 'block',
-  margin: 'auto'
+  margin: '10px auto'
 };
 
 class UsersShow extends React.Component {
@@ -29,14 +29,7 @@ class UsersShow extends React.Component {
     .catch(err => console.log(err));
   }
 
-  deleteUplift = () => {
-    Axios
-    .delete(`/api/uplifts/${this.props.match.params.id}`)
-    .then(() => this.props.history.push('/useruplifts'))
-    .catch(err => console.log(err));
-  }
-
-  render() {
+    render() {
     return (
       <div>
       { this.state.user &&
@@ -48,7 +41,6 @@ class UsersShow extends React.Component {
         <Link to={`/uplifts/${uplift.id}`}>
         <img style={upliftStyle} src={uplift.body} />
         </Link>
-        <button onClick={this.deleteUplift}>Delete</button>
         </div>
         </div>
       )}
