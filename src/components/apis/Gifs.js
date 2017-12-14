@@ -1,19 +1,28 @@
 import React from 'react';
 import Axios from 'axios';
 
-import SaveButton from '../utilities/SaveButton';
+const upliftStyle = {
+  display: 'block',
+  width: '600px',
+  margin: '0 auto',
+  borderRadius: '5px'
+};
 
+const buttonStyle = {
+  marginTop: '10px',
+  color: 'white',
+  fontWeight: '600'
+};
 
 class Gifs extends React.Component {
   state = {
     gifs: [],
-    currentIndex: 0,
-    url: ''
+    currentIndex: 0
   }
 
   componentDidMount() {
     Axios
-      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=25&rating=G')
+      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=50&rating=G')
       .then(res => this.setState({ gifs: res.data.data }))
       .catch(err => console.log(err));
   }
@@ -22,29 +31,24 @@ class Gifs extends React.Component {
     this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const getUrl = this.setState({url: this.state.gifs.images.fixed_width.url});
-    
-    Axios
-      .post('/api/uplifts', getUrl)
-      .then(() => this.props.history.push('/useruplifts'))
-      .catch(err => console.log(err.response.data.errors));
+  handleClick = (currentGif) => {
+    const body = currentGif.images.original.url;
+    this.props.getBody(body, 'gif');
   }
 
   render () {
-    const currentGif = this.state.gifs[this.state.currentGif];
-
+    const currentGif = this.state.gifs[this.state.currentIndex];
 
     return (
       <div>
-        <h1>Gifs</h1>
-        { currentGif && <img src={currentGif.images.fixed_width.url} />}
-        <button onClick={this.nextInArray}>Next</button>
-        <SaveButton
-          handleSubmit={ this.handleSubmit }
-          url={ this.url }
-        />
+        <div className="row">
+          { currentGif &&
+            <img style={upliftStyle} src={currentGif.images.original.url} />}
+        </div>
+        <div className="row" style={upliftStyle}>
+          <button onClick={this.nextInArray} style={buttonStyle}>Next gif</button>
+          <button onClick={() => this.handleClick(currentGif)} style={buttonStyle} className="u-pull-right">Save</button>
+        </div>
       </div>
     );
   }

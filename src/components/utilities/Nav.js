@@ -2,7 +2,25 @@ import React                from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 
+const button = {
+  float: 'right',
+  margin: '0 5px',
+  fontWeight: '800'
+};
+
+const white = {
+  color: 'white'
+};
+
+const tinyLogo = {
+  height: '50px',
+  padding: '5px'
+};
+
+
 const Nav = ({ history }) => {
+
+  // const currentUserId = Auth.getPayload().userId;
 
   function logout(e) {
     e.preventDefault();
@@ -12,22 +30,31 @@ const Nav = ({ history }) => {
 
   return(
     <nav>
-      {!Auth.isAuthenticated() &&
-        <button>
-          <Link to="/register">Register</Link>
-        </button>}
-      {!Auth.isAuthenticated() &&
-        <button>
-          <Link to="/login">Login</Link>
-        </button>}
-      {Auth.isAuthenticated() &&
-        <button href="#" onClick={logout}>
-          Logout
-        </button>}
-      {Auth.isAuthenticated() &&
-        <button>
-          <Link to="/useruplifts">My uplifts</Link>
-        </button>}
+      <Link to="/"><img style={tinyLogo} src="../../assets/download.png" /></Link>
+      <div style={button}>
+        {!Auth.isAuthenticated() &&
+          <button>
+            <Link style={white} to="/register">Register</Link>
+          </button>}
+      </div>
+      <div style={button}>
+        {!Auth.isAuthenticated() &&
+            <button>
+              <Link to="/login">Login</Link>
+            </button>}
+      </div>
+      <div style={button}>
+        {Auth.isAuthenticated() &&
+              <button style={white} href="#" onClick={logout}>
+                Logout
+              </button>}
+      </div>
+      <div style={button}>
+        {Auth.isAuthenticated() &&
+                <button>
+                  <Link style={white} to={`/users/${Auth.getPayload().userId}`}>My uplifts</Link>
+                </button>}
+      </div>
     </nav>
   );
 };

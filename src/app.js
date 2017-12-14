@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <Nav />
           <main>
             <Routes />

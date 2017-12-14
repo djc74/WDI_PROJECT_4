@@ -1,9 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 
-import UserUpliftsForm from './UserUpliftsForm';
+import UpliftsForm from './UpliftsForm';
 
-class UserUpliftsNew extends React.Component {
+class UpliftsNew extends React.Component {
   state = {
     uplift: {
       body: '',
@@ -21,15 +21,15 @@ class UserUpliftsNew extends React.Component {
 
     Axios
       .post('/api/uplifts', this.state.uplift)
-      .then(() => this.props.history.push('/useruplifts'))
+      .then(() => this.props.history.push('/users/:id'))
       .catch(err => console.log(err.response.data.errors));
   }
 
   render() {
     return(
       <div>
-        <h1>User Uplifts New</h1>
-        <UserUpliftsForm
+        <h1>Uplifts New</h1>
+        <UpliftsForm
           handleSubmit={ this.handleSubmit }
           handleChange={ this.handleChange }
           uplift={ this.state.uplift }
@@ -39,4 +39,4 @@ class UserUpliftsNew extends React.Component {
   }
 }
 
-export default UserUpliftsNew;
+export default UpliftsNew;
