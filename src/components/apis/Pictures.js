@@ -4,11 +4,12 @@ import Axios from 'axios';
 const upliftStyle = {
   display: 'block',
   width: '600px',
-  margin: '0 auto'
+  margin: '0 auto',
+  borderRadius: '5px'
 };
 
 const buttonStyle = {
-  margin: '10px 10px 0 0',
+  marginTop: '10px',
   color: 'white',
   fontWeight: '600'
 }
@@ -46,7 +47,7 @@ class Pictures extends React.Component {
         </div>
         <div className="row" style={upliftStyle}>
         <button onClick={this.nextInArray} style={buttonStyle}>Next Picture</button>
-        <button onClick={() => this.handleClick(currentPicture)} style={buttonStyle}>Save</button>
+        <button onClick={() => this.handleClick(currentPicture)} style={buttonStyle} className="u-pull-right">Save</button>
         </div>
         </div>
       );

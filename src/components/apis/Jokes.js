@@ -8,7 +8,7 @@ const upliftStyle = {
 };
 
 const buttonStyle = {
-  margin: '0 10px 0 0',
+  marginRight: '10px',
   color: 'white',
   fontWeight: '600'
 }
@@ -46,7 +46,7 @@ class Jokes extends React.Component {
             <h3><strong>{currentJoke.data.title}</strong></h3>
             <h3>{currentJoke.data.selftext}</h3>
             <button onClick={this.nextInArray} style={buttonStyle}>Next joke</button>
-            <button onClick={() => this.handleClick(currentJoke)} style={buttonStyle}>Save</button>
+            <button onClick={() => this.handleClick(currentJoke)} style={buttonStyle} className="u-pull-right">Save</button>
           </div>
         }
       </div>

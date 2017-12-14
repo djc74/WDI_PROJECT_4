@@ -6,7 +6,7 @@ import Auth from '../../lib/Auth';
 import BackButton from '../utilities/BackButton';
 
 const upliftStyle = {
-  border: '1px solid black',
+  border: '1px solid white',
   width: '90%',
   height: '300px',
   overflow: 'hidden',

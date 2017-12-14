@@ -7,7 +7,6 @@ import Register from '../auth/Register';
 import UpliftsIndex from '../uplifts/UpliftsIndex';
 import UpliftsShow from '../uplifts/UpliftsShow';
 import UpliftsNew from '../uplifts/UpliftsNew';
-// import UserIndex from '../users/UserIndex';
 import UsersShow from '../users/UsersShow';
 
 const Routes = () => {
