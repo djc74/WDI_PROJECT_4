@@ -2,7 +2,7 @@ import React from 'react';
 
 import BackButton from '../utilities/BackButton';
 
-const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
+const UpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
   return (
     <div>
       <BackButton />
@@ -38,4 +38,4 @@ const UserUpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
   );
 };
 
-export default UserUpliftsForm;
+export default UpliftsForm;

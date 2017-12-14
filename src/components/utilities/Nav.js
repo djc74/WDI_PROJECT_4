@@ -26,7 +26,7 @@ const Nav = ({ history }) => {
         </button>}
       {Auth.isAuthenticated() &&
         <button>
-          <Link to="/useruplifts">My uplifts</Link>
+          <Link to="/users/:id">My uplifts</Link>
         </button>}
     </nav>
   );

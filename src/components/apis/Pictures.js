@@ -19,6 +19,11 @@ class Pictures extends React.Component {
     this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
   }
 
+  handleClick = (currentPicture) => {
+    const body = currentPicture.data.url
+    this.props.getBody(body, 'picture');
+  }
+
   render () {
     const currentPicture = this.state.pictures[this.state.currentIndex];
 
@@ -27,6 +32,7 @@ class Pictures extends React.Component {
         <h1>Pictures</h1>
         { currentPicture && <img src={currentPicture.data.url} />}
         <button onClick={this.nextInArray}>Next</button>
+        <button onClick={() => this.handleClick(currentPicture)}>Save</button>
       </div>
     );
   }

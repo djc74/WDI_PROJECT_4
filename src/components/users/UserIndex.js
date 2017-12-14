@@ -1,18 +1,17 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-// import Auth from '../../lib/Auth';
 
 import HomeButton from '../utilities/HomeButton';
 
-class UserUpliftsIndex extends React.Component {
+class UserIndex extends React.Component {
   state = {
     uplifts: []
   }
 
   componentDidMount() {
     Axios
-      .get('api/uplifts')
+      .get('/api/uplifts')
       .then(res => this.setState({ uplifts: res.data}))
       .catch(err => console.log(err));
   }
@@ -24,15 +23,13 @@ class UserUpliftsIndex extends React.Component {
         <h1>User Uplift Index</h1>
         <HomeButton />
         <button>
-          <Link to={'/useruplifts/new'}>Add Uplift</Link>
+          <Link to={'/uplifts/new'}>Add Uplift</Link>
         </button>
         {this.state.uplifts.map(uplift =>
           <div key={uplift.id}>
-            <Link to={`/useruplifts/${uplift.id}`}>
+            <Link to={`/uplifts/${uplift.id}`}>
               <img src={uplift.body} />
-              <h4> {uplift.createdBy} </h4>
             </Link>
-
           </div>
         )}
       </div>
@@ -40,4 +37,4 @@ class UserUpliftsIndex extends React.Component {
   }
 }
 
-export default UserUpliftsIndex;
+export default UserIndex;
