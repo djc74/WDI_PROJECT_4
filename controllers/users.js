@@ -8,7 +8,7 @@ function usersShow(req, res, next) {
       if (!user) return res.notFound();
 
       Uplift
-        .find({ createdBy: user.id })
+        .find()
         .then(uplifts => {
           return res.status(200).json({ user, uplifts });
         })

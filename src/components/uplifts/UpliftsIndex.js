@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Gifs from '../apis/Gifs';
 import Pictures from '../apis/Pictures';
 import Jokes from '../apis/Jokes';
+import Auth from '../../lib/Auth';
 
 class UpliftsIndex extends React.Component {
   state = {
@@ -21,8 +22,10 @@ class UpliftsIndex extends React.Component {
 
   submitUplift = () => {
     Axios
-      .post('/api/uplifts', this.state.uplift)
-      .then(() => this.props.history.push('/users/:id'))
+      .post('/api/uplifts', this.state.uplift, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
+      .then(res => this.props.history.push(`/users/${res.data.createdBy.id}`))
       .catch(err => console.log(err.response.data.errors));
   }
 

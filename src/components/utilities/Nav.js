@@ -4,6 +4,8 @@ import Auth from '../../lib/Auth';
 
 const Nav = ({ history }) => {
 
+  const currentUserId = Auth.getPayload().userId;
+
   function logout(e) {
     e.preventDefault();
     Auth.removeToken();
@@ -12,6 +14,9 @@ const Nav = ({ history }) => {
 
   return(
     <nav>
+      <button>
+        <Link to="/">Home</Link>
+      </button>
       {!Auth.isAuthenticated() &&
         <button>
           <Link to="/register">Register</Link>
@@ -26,7 +31,7 @@ const Nav = ({ history }) => {
         </button>}
       {Auth.isAuthenticated() &&
         <button>
-          <Link to="/users/:id">My uplifts</Link>
+          <Link to={`/users/${currentUserId}`}>My uplifts</Link>
         </button>}
     </nav>
   );

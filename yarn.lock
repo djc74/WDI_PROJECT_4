@@ -1766,6 +1766,10 @@ enhanced-resolve@^3.4.0:
     object-assign "^4.0.1"
     tapable "^0.2.7"
 
+enquire.js@^2.1.1:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/enquire.js/-/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
+
 entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
@@ -4540,6 +4544,12 @@ react-router@^4.2.0:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
+
+react-skeleton@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-skeleton/-/react-skeleton-1.0.2.tgz#6c58108c581432e886de65f5f7b069519978a227"
+  dependencies:
+    enquire.js "^2.1.1"
 
 react-test-renderer@15, react-test-renderer@^15.5.0:
   version "15.6.2"
