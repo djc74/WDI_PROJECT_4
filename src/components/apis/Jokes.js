@@ -7,6 +7,12 @@ const upliftStyle = {
   margin: '0 auto'
 };
 
+const buttonStyle = {
+  margin: '0 10px 0 0',
+  color: 'white',
+  fontWeight: '600'
+}
+
 class Jokes extends React.Component {
   state = {
     jokes: [],
@@ -39,8 +45,8 @@ class Jokes extends React.Component {
           <div style={upliftStyle}>
             <h3><strong>{currentJoke.data.title}</strong></h3>
             <h3>{currentJoke.data.selftext}</h3>
-            <button onClick={this.nextInArray}>Next</button>
-            <button onClick={() => this.handleClick(currentJoke)}>Save</button>
+            <button onClick={this.nextInArray} style={buttonStyle}>Next joke</button>
+            <button onClick={() => this.handleClick(currentJoke)} style={buttonStyle}>Save</button>
           </div>
         }
       </div>

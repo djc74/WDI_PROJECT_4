@@ -2,15 +2,19 @@ import React                from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 
-const rightStyle = {
+const button = {
   float: 'right',
   margin: '0 5px',
+  color: 'white',
+  fontWeight: '800'
 };
 
 const tinyLogo = {
   height: '50px',
   padding: '5px'
 }
+
+
 
 const Nav = ({ history }) => {
 
@@ -25,25 +29,25 @@ const Nav = ({ history }) => {
   return(
     <nav>
     <Link to="/"><img style={tinyLogo} src="../../assets/download.png" /></Link>
-    <div style={rightStyle}>
+    <div style={button}>
     {!Auth.isAuthenticated() &&
       <button>
       <Link to="/register">Register</Link>
       </button>}
       </div>
-      <div style={rightStyle}>
+      <div style={button}>
       {!Auth.isAuthenticated() &&
         <button>
         <Link to="/login">Login</Link>
         </button>}
         </div>
-        <div style={rightStyle}>
+        <div style={button}>
         {Auth.isAuthenticated() &&
           <button href="#" onClick={logout}>
           Logout
           </button>}
           </div>
-          <div style={rightStyle}>
+          <div style={button}>
           {Auth.isAuthenticated() &&
             <button>
             <Link to={`/users/${Auth.getPayload().userId}`}>My uplifts</Link>

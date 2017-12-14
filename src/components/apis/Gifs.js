@@ -7,6 +7,12 @@ const upliftStyle = {
   margin: '0 auto'
 };
 
+const buttonStyle = {
+  margin: '10px 10px 0 0',
+  color: 'white',
+  fontWeight: '600'
+}
+
 class Gifs extends React.Component {
   state = {
     gifs: [],
@@ -37,10 +43,10 @@ class Gifs extends React.Component {
         <div className="row">
         { currentGif &&
           <img style={upliftStyle} src={currentGif.images.original.url} />}
-          </div>
-          <div className="row">
-        <button onClick={this.nextInArray}>Next</button>
-        <button onClick={() => this.handleClick(currentGif)}>Save</button>
+        </div>
+        <div className="row" style={upliftStyle}>
+        <button onClick={this.nextInArray} style={buttonStyle}>Next gif</button>
+        <button onClick={() => this.handleClick(currentGif)} style={buttonStyle}>Save</button>
         </div>
       </div>
     );

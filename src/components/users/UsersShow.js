@@ -6,12 +6,11 @@ import Auth from '../../lib/Auth';
 import BackButton from '../utilities/BackButton';
 
 const upliftStyle = {
-  border: '2px solid black',
-  width: '400px',
-  height: '400px',
+  border: '1px solid black',
+  width: '90%',
+  height: '300px',
   overflow: 'hidden',
-  display: 'block',
-  margin: '10px auto'
+  margin: '10px'
 };
 
 class UsersShow extends React.Component {
@@ -23,7 +22,7 @@ class UsersShow extends React.Component {
   componentDidMount() {
     Axios
     .get(`/api/users/${this.props.match.params.id}`, {
-      headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
     })
     .then(res => this.setState({ user: res.data.user, uplifts: res.data.uplifts}))
     .catch(err => console.log(err));
@@ -37,9 +36,9 @@ class UsersShow extends React.Component {
       <div className="row">
       { this.state.uplifts.map(uplift =>
         <div key={uplift.id}>
-        <div className="six columns">
+        <div className="four columns">
         <Link to={`/uplifts/${uplift.id}`}>
-        <img style={upliftStyle} src={uplift.body} />
+        <img style={upliftStyle} className="shadow" src={uplift.body} />
         </Link>
         </div>
         </div>

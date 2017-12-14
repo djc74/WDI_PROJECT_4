@@ -2,8 +2,17 @@ import React from 'react';
 import Axios from 'axios';
 
 const show = {
-  width: '600px',
-  margin: '0 auto'
+  width: '80%',
+  display: 'block',
+  margin: '0 auto',
+  border: '1px solid black'
+}
+
+const button = {
+  display: 'block',
+  margin: '10px auto',
+  color: 'white',
+  fontWeight: '800'
 }
 
 class UpliftsShow extends React.Component {
@@ -14,9 +23,9 @@ class UpliftsShow extends React.Component {
 
   componentDidMount() {
     Axios
-      .get(`/api/uplifts/${this.props.match.params.id}`)
-      .then(res => this.setState({ uplift: res.data }))
-      .catch(err => console.log(err));
+    .get(`/api/uplifts/${this.props.match.params.id}`)
+    .then(res => this.setState({ uplift: res.data }))
+    .catch(err => console.log(err));
   }
 
   deleteUplift = () => {
@@ -29,9 +38,13 @@ class UpliftsShow extends React.Component {
 
   render() {
     return (
+      <div>
       <div className="row">
-        <img style={show} src={this.state.uplift.body}/>
-        <button onClick={this.deleteUplift}>Delete</button>
+      <img style={show} src={this.state.uplift.body}/>
+      </div>
+      <div className="row">
+      <button onClick={this.deleteUplift} style={button}>Remove this uplift</button>
+      </div>
       </div>
     );
   }
