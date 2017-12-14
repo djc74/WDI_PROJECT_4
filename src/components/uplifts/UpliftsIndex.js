@@ -6,6 +6,12 @@ import Pictures from '../apis/Pictures';
 import Jokes from '../apis/Jokes';
 import Auth from '../../lib/Auth';
 
+const upliftStyle = {
+  display: 'block',
+  width: '600px',
+  margin: '0 auto'
+};
+
 class UpliftsIndex extends React.Component {
   state = {
     uplift: {
@@ -32,9 +38,11 @@ class UpliftsIndex extends React.Component {
   render() {
     return (
       <div>
-      <Gifs getBody={this.getBody}/>
-      <Pictures getBody={this.getBody}/>
-      <Jokes getBody={this.getBody}/>
+      <Gifs getBody={this.getBody} />
+      <hr />
+      <Pictures getBody={this.getBody} />
+      <hr />
+      <Jokes getBody={this.getBody} />
       </div>
     );
   }

@@ -1,9 +1,11 @@
-// https://www.reddit.com/r/Jokes/.json
-
-
 import React from 'react';
 import Axios from 'axios';
 
+const upliftStyle = {
+  display: 'block',
+  width: '600px',
+  margin: '0 auto'
+};
 
 class Jokes extends React.Component {
   state = {
@@ -34,7 +36,7 @@ class Jokes extends React.Component {
     return (
       <div>
         { currentJoke &&
-          <div>
+          <div style={upliftStyle}>
             <h3><strong>{currentJoke.data.title}</strong></h3>
             <h3>{currentJoke.data.selftext}</h3>
             <button onClick={this.nextInArray}>Next</button>

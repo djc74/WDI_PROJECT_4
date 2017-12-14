@@ -2,8 +2,10 @@ import React from 'react';
 import Axios from 'axios';
 
 const upliftStyle = {
-  width: '600px'
-}
+  display: 'block',
+  width: '600px',
+  margin: '0 auto'
+};
 
 class Pictures extends React.Component {
   state = {
