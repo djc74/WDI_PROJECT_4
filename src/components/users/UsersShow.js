@@ -10,7 +10,8 @@ const upliftStyle = {
   width: '90%',
   height: '300px',
   overflow: 'hidden',
-  margin: '10px'
+  margin: '10px',
+  borderRadius: '5px'
 };
 
 class UsersShow extends React.Component {
@@ -38,7 +39,7 @@ class UsersShow extends React.Component {
         <div key={uplift.id}>
         <div className="four columns">
         <Link to={`/uplifts/${uplift.id}`}>
-        <img style={upliftStyle} className="shadow" src={uplift.body} />
+        <img style={upliftStyle} className="shadow animated rotateIn" src={uplift.body} />
         </Link>
         </div>
         </div>

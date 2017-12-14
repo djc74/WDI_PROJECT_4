@@ -5,7 +5,8 @@ const show = {
   width: '80%',
   display: 'block',
   margin: '0 auto',
-  border: '1px solid black'
+  borderRadius: '5px',
+  border: '1px solid white'
 }
 
 const button = {
@@ -40,7 +41,7 @@ class UpliftsShow extends React.Component {
     return (
       <div>
       <div className="row">
-      <img style={show} src={this.state.uplift.body}/>
+      <img style={show} className="animated lightSpeedIn" src={this.state.uplift.body}/>
       </div>
       <div className="row">
       <button onClick={this.deleteUplift} style={button}>Remove this uplift</button>
