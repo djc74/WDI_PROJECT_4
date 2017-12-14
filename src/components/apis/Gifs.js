@@ -22,13 +22,10 @@ class Gifs extends React.Component {
     this.setState(prevState => ({ currentIndex: prevState.currentIndex + 1 }));
   }
 
-  getUrl = () => {
-    this.setState({url: this.state.gifs.images.fixed_width.url});
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
-
+    const getUrl = this.setState({url: this.state.gifs.images.fixed_width.url});
+    
     Axios
       .post('/api/uplifts', getUrl)
       .then(() => this.props.history.push('/useruplifts'))
