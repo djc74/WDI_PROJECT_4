@@ -3,14 +3,26 @@
 }
 
 html {
-  background: #C02425;
-  background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);
-  background: linear-gradient(to bottom, #F0CB35, #C02425);
+  animation: colorchange 50s;
+  animation-iteration-count: infinite;
 }
+
+@keyframes colorchange
+   {
+     0%   {background: red;}
+     20%  {background: orange;}
+     50%  {background: yellow;}
+     80%  {background: orange;}
+     100% {background: red;}
+   }
 
 img {
   &:hover{
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
   }
-
 }
+
+
+// background: #C02425;
+// background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);
+// background: linear-gradient(to bottom, #F0CB35, #C02425);

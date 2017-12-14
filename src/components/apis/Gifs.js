@@ -1,6 +1,10 @@
 import React from 'react';
 import Axios from 'axios';
 
+const upliftStyle = {
+  width: '600px',
+  margin: '0 auto'
+};
 
 class Gifs extends React.Component {
   state = {
@@ -29,10 +33,14 @@ class Gifs extends React.Component {
 
     return (
       <div>
-        <h1>Gifs</h1>
-        { currentGif && <img src={currentGif.images.original.url} />}
+        <div className="row">
+        { currentGif &&
+          <img style={upliftStyle} src={currentGif.images.original.url} />}
+          </div>
+          <div className="row">
         <button onClick={this.nextInArray}>Next</button>
         <button onClick={() => this.handleClick(currentGif)}>Save</button>
+        </div>
       </div>
     );
   }

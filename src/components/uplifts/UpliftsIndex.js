@@ -32,7 +32,6 @@ class UpliftsIndex extends React.Component {
   render() {
     return (
       <div>
-      <h1>Uplift Index</h1>
       <Gifs getBody={this.getBody}/>
       <Pictures getBody={this.getBody}/>
       <Jokes getBody={this.getBody}/>

@@ -1,6 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 
+const upliftStyle = {
+  width: '600px'
+}
 
 class Pictures extends React.Component {
   state = {
@@ -10,9 +13,9 @@ class Pictures extends React.Component {
 
   componentDidMount() {
     Axios
-      .get('https://www.reddit.com/r/EarthPorn/.json')
-      .then(res => this.setState({ pictures: res.data.data.children }))
-      .catch(err => console.log(err));
+    .get('https://www.reddit.com/r/EarthPorn/.json')
+    .then(res => this.setState({ pictures: res.data.data.children }))
+    .catch(err => console.log(err));
   }
 
   nextInArray = () => {
@@ -29,13 +32,17 @@ class Pictures extends React.Component {
 
     return (
       <div>
-        <h1>Pictures</h1>
-        { currentPicture && <img src={currentPicture.data.url} />}
+      <div className="row">
+      { currentPicture &&
+        <img style={upliftStyle} src={currentPicture.data.url} />}
+        </div>
+        <div className="row">
         <button onClick={this.nextInArray}>Next</button>
         <button onClick={() => this.handleClick(currentPicture)}>Save</button>
-      </div>
-    );
+        </div>
+        </div>
+      );
+    }
   }
-}
 
-export default Pictures;
+  export default Pictures;

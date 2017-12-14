@@ -33,7 +33,6 @@ class Jokes extends React.Component {
 
     return (
       <div>
-        <h1>Jokes</h1>
         { currentJoke &&
           <div>
             <h3>{currentJoke.data.title}</h3>

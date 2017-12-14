@@ -1,10 +1,16 @@
 import React from 'react';
 import Axios from 'axios';
 
+const show = {
+  width: '600px',
+  margin: '0 auto'
+}
+
 class UpliftsShow extends React.Component {
   state = {
     uplift: {}
   }
+
 
   componentDidMount() {
     Axios
@@ -15,10 +21,8 @@ class UpliftsShow extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Uplift show</h1>
-        <img src={this.state.uplift.body}/>
-        <h3>{this.state.uplift.category}</h3>
+      <div className="row">
+        <img style={show} src={this.state.uplift.body}/>
       </div>
     );
   }

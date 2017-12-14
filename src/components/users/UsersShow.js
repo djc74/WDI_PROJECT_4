@@ -7,11 +7,11 @@ import BackButton from '../utilities/BackButton';
 
 const upliftStyle = {
   border: '2px solid black',
-  width: '400px',
+  width: '90%',
   height: '400px',
   overflow: 'hidden',
   display: 'block',
-  margin: '5px'
+  margin: 'auto'
 };
 
 class UsersShow extends React.Component {
@@ -39,7 +39,8 @@ class UsersShow extends React.Component {
   render() {
     return (
       <div>
-      { this.state.user && <h1><strong>{this.state.user.firstname}s</strong> reasons to be cheerful</h1>}
+      { this.state.user &&
+        <h1><strong>{this.state.user.firstname}s</strong> reasons to be cheerful</h1>}
       <div className="row">
       { this.state.uplifts.map(uplift =>
         <div key={uplift.id}>
@@ -47,6 +48,7 @@ class UsersShow extends React.Component {
         <Link to={`/uplifts/${uplift.id}`}>
         <img style={upliftStyle} src={uplift.body} />
         </Link>
+        <button onClick={this.deleteUplift}>Delete</button>
         </div>
         </div>
       )}
