@@ -1,7 +1,16 @@
-img {
-  max-width: 400px;
+* {
+  text-decoration: none;
 }
 
-* {
-  background: white;
+html {
+  background: #C02425;
+  background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);
+  background: linear-gradient(to bottom, #F0CB35, #C02425);
+}
+
+img {
+  &:hover{
+    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  }
+
 }
