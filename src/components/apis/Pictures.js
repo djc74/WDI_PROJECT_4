@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Auth from '../../lib/Auth';
 
 const upliftStyle = {
   display: 'block',
@@ -47,7 +48,7 @@ class Pictures extends React.Component {
         </div>
         <div className="row" style={upliftStyle}>
         <button onClick={this.nextInArray} style={buttonStyle}>Next Picture</button>
-        <button onClick={() => this.handleClick(currentPicture)} style={buttonStyle} className="u-pull-right">Save</button>
+        {Auth.isAuthenticated() && <button onClick={() => this.handleClick(currentPicture)} style={buttonStyle} className="u-pull-right">Save</button>}
         </div>
         </div>
       );

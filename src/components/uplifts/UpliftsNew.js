@@ -28,7 +28,7 @@ class UpliftsNew extends React.Component {
   render() {
     return(
       <div>
-        <h1>Uplifts New</h1>
+        <h1>Add your own uplift!</h1>
         <UpliftsForm
           handleSubmit={ this.handleSubmit }
           handleChange={ this.handleChange }

@@ -20,8 +20,6 @@ const tinyLogo = {
 
 const Nav = ({ history }) => {
 
-  // const currentUserId = Auth.getPayload().userId;
-
   function logout(e) {
     e.preventDefault();
     Auth.removeToken();
@@ -40,7 +38,7 @@ const Nav = ({ history }) => {
       <div style={button}>
         {!Auth.isAuthenticated() &&
             <button>
-              <Link to="/login">Login</Link>
+              <Link style={white} to="/login">Login</Link>
             </button>}
       </div>
       <div style={button}>
@@ -53,6 +51,12 @@ const Nav = ({ history }) => {
         {Auth.isAuthenticated() &&
                 <button>
                   <Link style={white} to={`/users/${Auth.getPayload().userId}`}>My uplifts</Link>
+                </button>}
+      </div>
+      <div style={button}>
+        {Auth.isAuthenticated() &&
+                <button>
+                  <Link style={white} to="/uplifts/new">Add uplift</Link>
                 </button>}
       </div>
     </nav>

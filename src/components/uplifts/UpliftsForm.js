@@ -7,22 +7,22 @@ const UpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
     <div>
       <BackButton />
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="twelve columns">
           <label htmlFor="body">Link to picture or gif</label>
           <input
             type="text"
-            className="form-control"
+            className="u-full-width"
             id="body"
             name="body"
             value={uplift.body}
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="twelve columns">
           <label htmlFor="category">Category</label>
           <input
             type="text"
-            className="form-control"
+            // className="u-half-width"
             id="category"
             name="category"
             value={uplift.category}
@@ -30,7 +30,7 @@ const UpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
           />
         </div>
 
-        <div>
+        <div className="twelve columns">
           <button>Save</button>
         </div>
       </form>

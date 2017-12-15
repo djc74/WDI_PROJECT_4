@@ -51,3 +51,9 @@ class UsersShow extends React.Component {
 }
 
 export default UsersShow;
+
+// react-slick
+// in render before return
+// const setting = {
+// }
+//<Silder ref={c => this.silder = c } {...settings}
