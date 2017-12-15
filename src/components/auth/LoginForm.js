@@ -3,27 +3,29 @@ import React from 'react';
 const LoginForm = ({ handleChange, handleSubmit, user }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
+      <div className="twelve columns">
+      <label for="exampleEmailInput">Your email</label>
         <input
           type="text"
           name="email"
           placeholder="Email"
           onChange={handleChange}
           value={user.email}
-          className="form-control"
+          className="twelve columns"
         />
       </div>
-      <div className="form-group">
+      <div className="twelve columns">
+      <label for="examplePassword">Your password</label>
         <input
           type="password"
           name="password"
           placeholder="Password"
           onChange={handleChange}
           value={user.password}
-          className="form-control"
+          className="twelve columns"
         />
       </div>
-      <button className="btn btn-primary">Login</button>
+      <button className="u-pull-left">Login</button>
     </form>
   );
 };

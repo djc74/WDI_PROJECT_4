@@ -33,7 +33,7 @@ class UsersShow extends React.Component {
     return (
       <div>
       { this.state.user &&
-        <h1><strong>{this.state.user.firstname}s</strong> reasons to be cheerful</h1>}
+        <h1><strong>{this.state.user.firstname}&apos;s</strong> reasons to be cheerful</h1>}
       <div className="row">
       { this.state.uplifts.map(uplift =>
         <div key={uplift.id}>

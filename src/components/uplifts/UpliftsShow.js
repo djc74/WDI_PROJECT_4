@@ -1,5 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
+import Auth from '../../lib/Auth';
+
 
 const show = {
   width: '80%',
@@ -32,7 +34,7 @@ class UpliftsShow extends React.Component {
   deleteUplift = () => {
     Axios
     .delete(`/api/uplifts/${this.props.match.params.id}`)
-    .then(() => this.props.history.push(`/users/${this.props.match.params.id}`))
+    .then(() => this.props.history.push(`/users/${Auth.getPayload().userId}`))
     .catch(err => console.log(err));
   }
 

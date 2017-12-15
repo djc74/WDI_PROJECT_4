@@ -22,7 +22,6 @@ const UpliftsForm = ({ handleSubmit, handleChange, uplift }) => {
           <label htmlFor="category">Category</label>
           <input
             type="text"
-            // className="u-half-width"
             id="category"
             name="category"
             value={uplift.category}
