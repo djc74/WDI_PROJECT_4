@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 import BackButton from '../utilities/BackButton';
 
+import Slider from 'react-slick';
+
+
 const upliftStyle = {
   border: '1px solid white',
-  width: '90%',
-  height: '300px',
+  height: '400px',
   overflow: 'hidden',
-  margin: '10px',
+  margin: '0 auto',
   borderRadius: '5px'
 };
 
@@ -29,31 +31,31 @@ class UsersShow extends React.Component {
     .catch(err => console.log(err));
   }
 
-    render() {
+  render() {
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1
+    };
+
+
     return (
       <div>
-      { this.state.user &&
-        <h1><strong>{this.state.user.firstname}&apos;s</strong> reasons to be cheerful</h1>}
-      <div className="row">
-      { this.state.uplifts.map(uplift =>
-        <div key={uplift.id}>
-        <div className="four columns">
-        <Link to={`/uplifts/${uplift.id}`}>
-        <img style={upliftStyle} className="shadow animated rotateIn" src={uplift.body} />
-        </Link>
-        </div>
-        </div>
-      )}
+        <h1><strong>{this.state.user.firstname}&apos;s</strong> reasons to be   cheerful</h1>
+        <Slider {...settings}>
+        { this.state.uplifts.map(uplift =>
+          <div key={uplift.id}>
+            <Link to={`/uplifts/${uplift.id}`}>
+            <img style={upliftStyle} src={uplift.body} />}
+            </Link>
+          </div>
+        )}
+        </Slider>
       </div>
-      </div>
-    );
+      );
+    }
   }
-}
 
 export default UsersShow;
-
-// react-slick
-// in render before return
-// const setting = {
-// }
-//<Silder ref={c => this.silder = c } {...settings}
