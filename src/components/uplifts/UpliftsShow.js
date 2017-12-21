@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Auth from '../../lib/Auth';
+import BackButton from '../utilities/BackButton';
 
 
 const show = {
@@ -47,6 +48,7 @@ class UpliftsShow extends React.Component {
       </div>
       <div className="row">
       <button onClick={this.deleteUplift} style={button}>Remove this uplift</button>
+      <BackButton />
       </div>
       </div>
     );

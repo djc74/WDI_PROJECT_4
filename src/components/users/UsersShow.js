@@ -11,6 +11,7 @@ import Slider from 'react-slick';
 const upliftStyle = {
   border: '1px solid white',
   height: '400px',
+  maxWidth: '95%',
   overflow: 'hidden',
   margin: '0 auto',
   borderRadius: '5px'
