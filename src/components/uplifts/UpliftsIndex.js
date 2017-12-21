@@ -1,10 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 
+import Auth from '../../lib/Auth';
+
 import Gifs from '../apis/Gifs';
 import Pictures from '../apis/Pictures';
 import Jokes from '../apis/Jokes';
-import Auth from '../../lib/Auth';
+import Quotes from '../apis/Quotes';
 
 const upliftStyle = {
   display: 'block',
@@ -38,6 +40,8 @@ class UpliftsIndex extends React.Component {
   render() {
     return (
       <div>
+      <Quotes getBody={this.getBody} />
+      <hr />
       <Gifs getBody={this.getBody} />
       <hr />
       <Pictures getBody={this.getBody} />
