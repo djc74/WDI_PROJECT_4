@@ -23,7 +23,7 @@ class Gifs extends React.Component {
 
   componentDidMount() {
     Axios
-      .get('https://api.giphy.com/v1/gifs/trending?api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=50&rating=G')
+      .get('https://api.giphy.com/v1/gifs/search?q=happy&api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=50&rating=G')
       .then(res => this.setState({ gifs: res.data.data }))
       .catch(err => console.log(err));
   }

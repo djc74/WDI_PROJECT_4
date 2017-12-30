@@ -15,6 +15,11 @@ const buttonStyle = {
   fontWeight: '600'
 }
 
+const commentStyle = {
+  margin: '0 auto',
+  textAlign: 'center'
+}
+
 class Oddlys extends React.Component {
   state = {
     oddlys: [],
@@ -44,8 +49,12 @@ class Oddlys extends React.Component {
       <div>
       <div className="row">
       { currentOddly &&
-        <img style={upliftStyle} src={currentOddly.data.url} />}
+        <div>
+        <img style={upliftStyle} src={currentOddly.data.url} />
+      <h4 style={commentStyle}>{currentOddly.data.title}</h4>
+    </div>}
         </div>
+
         <div className="row" style={upliftStyle}>
         <button onClick={this.nextInArray} style={buttonStyle}>Next Picture</button>
         {Auth.isAuthenticated() && <button onClick={() => this.handleClick(currentOddly)} style={buttonStyle} className="u-pull-right">Save</button>}

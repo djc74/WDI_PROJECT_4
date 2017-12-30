@@ -23,7 +23,7 @@ class Quotes extends React.Component {
 
   componentDidMount() {
     Axios
-    .get('https://www.reddit.com/r/GetMotivated/.json')
+    .get('https://www.reddit.com/r/QuotesPorn/.json')
     .then(res => this.setState({ quotes: res.data.data.children }))
     .catch(err => console.log(err));
   }
