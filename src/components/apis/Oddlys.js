@@ -28,7 +28,7 @@ class Oddlys extends React.Component {
 
   componentDidMount() {
     Axios
-    .get('https://www.reddit.com/r/OddlySatisfying/.json')
+    .get('https://www.reddit.com/r/BeAmazed/.json')
     .then(res => this.setState({ oddlys: res.data.data.children }))
     .catch(err => console.log(err));
   }
