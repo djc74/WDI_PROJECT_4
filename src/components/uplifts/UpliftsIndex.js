@@ -10,6 +10,7 @@ import Jokes from '../apis/Jokes';
 import Oddlys from '../apis/Oddlys';
 import MostBeautifuls from '../apis/MostBeautifuls';
 import Arts from '../apis/Arts';
+import TrendGifs from '../apis/TrendGifs';
 
 const upliftStyle = {
   display: 'block',
@@ -50,6 +51,8 @@ class UpliftsIndex extends React.Component {
       <Pictures getBody={this.getBody} />
       <hr />
       <Jokes getBody={this.getBody} />
+      <hr />
+      <TrendGifs getBody={this.getBody} />
       <hr />
       <Oddlys getBody={this.getBody} />
       <hr />
