@@ -23,7 +23,7 @@ const commentStyle = {
 class MostBeautifuls extends React.Component {
   state = {
     mosts: [],
-    currentIndex: 1
+    currentIndex: 2
   }
 
   componentDidMount() {

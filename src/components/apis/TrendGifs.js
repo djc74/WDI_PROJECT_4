@@ -23,7 +23,7 @@ class TrendGifs extends React.Component {
 
   componentDidMount() {
     Axios
-      .get('https://api.giphy.com/v1/trendgifs/trending&api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA&limit=50&rating=G')
+      .get('http://api.giphy.com/v1/gifs/search?q=trending&api_key=AkP2KvyB6EO8UDAOutOdjF2l1j3yplBA')
       .then(res => this.setState({ trendgifs: res.data.data }))
       .catch(err => console.log(err));
   }

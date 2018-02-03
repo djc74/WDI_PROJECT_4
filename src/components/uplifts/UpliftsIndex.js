@@ -52,13 +52,13 @@ class UpliftsIndex extends React.Component {
       <hr />
       <Jokes getBody={this.getBody} />
       <hr />
-      <TrendGifs getBody={this.getBody} />
-      <hr />
-      <Oddlys getBody={this.getBody} />
-      <hr />
       <MostBeautifuls getBody={this.getBody} />
       <hr />
+      <TrendGifs getBody={this.getBody} />
+      <hr />
       <Arts getBody={this.getBody} />
+      <hr />
+      <Oddlys getBody={this.getBody} />
     </div>
     );
   }

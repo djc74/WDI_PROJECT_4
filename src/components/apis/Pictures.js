@@ -18,7 +18,7 @@ const buttonStyle = {
 class Pictures extends React.Component {
   state = {
     pictures: [],
-    currentIndex: 1
+    currentIndex: 2
   }
 
   componentDidMount() {
