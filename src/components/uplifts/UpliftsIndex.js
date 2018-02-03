@@ -8,6 +8,8 @@ import Gifs from '../apis/Gifs';
 import Pictures from '../apis/Pictures';
 import Jokes from '../apis/Jokes';
 import Oddlys from '../apis/Oddlys';
+import MostBeautifuls from '../apis/MostBeautifuls';
+import Arts from '../apis/Arts';
 
 const upliftStyle = {
   display: 'block',
@@ -50,7 +52,11 @@ class UpliftsIndex extends React.Component {
       <Jokes getBody={this.getBody} />
       <hr />
       <Oddlys getBody={this.getBody} />
-      </div>
+      <hr />
+      <MostBeautifuls getBody={this.getBody} />
+      <hr />
+      <Arts getBody={this.getBody} />
+    </div>
     );
   }
 }
