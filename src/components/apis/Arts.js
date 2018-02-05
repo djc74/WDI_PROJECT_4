@@ -50,10 +50,10 @@ class Arts extends React.Component {
       <div className="row">
       { currentArt &&
         <div>
-        <img style={upliftStyle} src={currentArt.data.url} />
-      <h4 style={commentStyle}>{currentArt.data.title}</h4>
-    </div>}
-        </div>
+          <img style={upliftStyle} src={currentArt.data.url} />
+          <h4 style={commentStyle}>{currentArt.data.title}</h4>
+        </div>}
+      </div>
 
         <div className="row" style={upliftStyle}>
         <button onClick={this.nextInArray} style={buttonStyle}>Next Picture</button>
